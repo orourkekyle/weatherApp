@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>It's The Weather</title>
+</head>
+
+<body>
+    <!-- Navbar / Header -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Navbar</a>
+        <form class="form-inline">
+          <input class="form-inline" type="search" placeholder="Search for a City" aria-label="Search" id="locSearch">
+          <button class="btn btn-outline-success form-inline" type="submit">Search</button>
+        </form>
+      </nav>
+
+      <!-- Jumbotron for content -->
+      <div class="jumbotron">
+        <h1 class="display-4">Current Search Location</h1>
+        <p class="temp">Temperature: </p>
+        <p class="humidity">Humidity: </p>
+        <p class="windSpd">Wind Speed: </p>
+        <p class="uvIndex">UV Index: </p>
+        <hr class="my-4">
+        <div class="cards">Cards will go here for 5 day forcast</div>
+      </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
