@@ -25,13 +25,21 @@
 
       <!-- Jumbotron for content -->
       <div class="jumbotron">
-        <h1 class="display-4">Current Search Location</h1>
+        <h1 class="display-4"></h1>
+        <img class="imgIcon">
+        <div class="currentTime"></div>
         <p class="temp">Temperature: </p>
         <p class="humidity">Humidity: </p>
         <p class="windSpd">Wind Speed: </p>
         <p class="uvIndex">UV Index: </p>
         <hr class="my-4">
-        <div class="cards">Cards will go here for 5 day forcast</div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text"></p>
+            </div>
+          </div>
       </div>
 
 
@@ -39,6 +47,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
     <script src="./script.js"></script>
 </body>
 

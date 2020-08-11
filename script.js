@@ -1,59 +1,74 @@
 $(document).ready(function() {
 
-    var openWeatherKey = "b10bebbbf017be387f3696dc3a2bb870";
-    /* 
-        to set item in localstorage
+    // var pastSearch = localStorage.getItem("pastSearch");
 
-        vat obj = {
-            name:"abc",
-            age:25
-        }
-        localstorage.setItem("objName", (obj);
+    // $(pastSearch).append(".navbar");
 
-        var data = localsorage.getItem("objName");
-    */
+    var openWeatherKey = "215a44c9d95d2514b4a159142a1c1ddb";
+
+    var now = moment().format("LLLL");
+
+    $(".currentTime").append(now);
+
     $(".btn").on("click", function(e){
         e.preventDefault();
+
         var userSearch =$("#locSearch").val();
-        console.log("City name: "+userSearch);
-        var queryURL = "https://www.api.openweathermap.org/data/2.5/weather?q";
+
+        localStorage.setItem("pastSearch", JSON.stringify(userSearch));
+
 
 
         $.ajax({
-            url: "https://www.api.openweathermap.org/data/2.5/weather?",
+            url: "https://api.openweathermap.org/data/2.5/weather?"+"&units=imperial",
             method: "GET",
             data: {
                 q: userSearch,
-                key: openWeatherKey
+                appid: openWeatherKey
             }
         }).then(function(response){
             console.log(response);
 
+            $(".display-4").text(userSearch);
+
+            var iconLoc = $(".imgIcon");
+            $(iconLoc).attr("src", response.weather[0].icon);
+
             var temp = $(".temp");
-            $(temp).append("response./*pathway to temp if server was responding*/");
+            $(temp).append(response.main.temp);
 
             var humid = $(".humidity");
-            $(humid).append("response./*pathway to humidity if server was responding*/");
+            $(humid).append(response.main.humidity);
 
             var wind = $(".windSpd");
-            $(wind).append("response./*pathway to wind speed if server was responding*/");
+            $(wind).append(response.wind.speed);
 
             var UV = $(".uvIndex");
             $(UV).append("response./*pathway to uv index if server was responding*/");
         });
 
         $.ajax({
-            url: "api.openweathermap.org/data/2.5/forecast?",
+            url: "https://api.openweathermap.org/data/2.5/forecast?",
             method: "GET",
             data: {
                 q: userSearch,
-                key: openWeatherKey
+                appid: openWeatherKey
             }
         }).then(function(response){
             console.log(response);
-            var forcastCardLoc = $(".cards")
-            $
-        })
+            $(".card-title").text(response.list[0].dt_text);
+            // var forecastLoc = $(".cards")
+            // var cardDiv = $("<div>");
+            // $(cardDiv).addClass("card");
+            // var cardBody = $("<div>");
+            // $(cardBody).addClass("card-body")
+            // var cardDate = $("<h5>");
+            // $(cardDate).text(response.list[0].dt_text);
+
+            // $(forecastLoc).display(cardDiv);
+
+
+        });
     });
 });
 
